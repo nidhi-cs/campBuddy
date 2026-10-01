@@ -1,0 +1,1214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Scholar's Workbench gives researchers practical support for academic work, publishing, innovation and patents."
+    />
+    <title>Scholar's Workbench | Research & Innovation Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        --ink: #0f1024;
+        --body: #5a6072;
+        --muted: #8a90a2;
+        --bg: #f7f8fb;
+        --surface: #ffffff;
+        --border: #e7e9f0;
+        --primary: #6d4aff;
+        --primary-hover: #5a3ae0;
+        --grad-hero: linear-gradient(
+          120deg,
+          #7c5cff 0%,
+          #c64fbe 45%,
+          #5b8def 100%
+        );
+        --grad-blue: linear-gradient(135deg, #6fa8c7 0%, #1e3a8a 100%);
+        --grad-pink: linear-gradient(135deg, #f3d9f0 0%, #f0b6da 100%);
+        --grad-purple: linear-gradient(135deg, #7c3aed 0%, #e24fa0 100%);
+        --tint-lavender: #eef0fa;
+        --font-display: Georgia, "Playfair Display", serif;
+        --font-body: system-ui, -apple-system, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+      }
+      .scholar-page {
+        --forest: var(--ink);
+        --deep: #24304b;
+        --teal: var(--primary);
+        --mint: #19b8c4;
+        --pale: var(--bg);
+        --muted: var(--body);
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--font-body);
+      }
+      .scholar-page .scholar-header {
+        background: #ffffffe8;
+        border-color: var(--border);
+      }
+      .scholar-page .scholar-brand b,
+      .scholar-page .scholar-nav .active,
+      .scholar-page .scholar-nav a:hover {
+        color: var(--forest);
+      }
+      .scholar-page .scholar-brand small,
+      .scholar-page .scholar-kicker,
+      .scholar-page .scholar-heading h2 i {
+        color: var(--teal);
+      }
+      .scholar-page .scholar-logo {
+        background: linear-gradient(145deg, #6246ea, #19b8c4);
+        color: #fff;
+      }
+      .scholar-page .open-status {
+        border-color: #9ddfe5;
+        background: #eefbfc;
+        color: #111a32;
+      }
+      .scholar-page .scholar-hero:before {
+        background: linear-gradient(135deg, #f0ecff, #eefbfc);
+      }
+      .scholar-page .scholar-hero:after {
+        background: #eefbfc;
+      }
+      .scholar-page .scholar-hero h1,
+      .scholar-page .scholar-heading h2,
+      .scholar-page .scholar-cta h2 {
+        color: var(--ink);
+      }
+      .scholar-page .scholar-hero h1 span {
+        color: var(--teal);
+      }
+      .scholar-page .scholar-button.dark {
+        background: linear-gradient(110deg, #111a32, #6246ea);
+        color: #fff;
+      }
+      .scholar-page .scholar-button.dark:hover {
+        background: linear-gradient(110deg, #6246ea, #19b8c4);
+      }
+      .scholar-page .scholar-button.outline {
+        border-color: #cbd5e1;
+        color: var(--forest);
+        background: #fff;
+      }
+      .scholar-page .scholar-button.outline:hover {
+        border-color: var(--teal);
+        background: #f0ecff;
+      }
+      .scholar-page .scholar-stats {
+        background: linear-gradient(110deg, #111a32, #24304b 56%, #19b8c4);
+      }
+      .scholar-page .scholar-stats .stat-icon {
+        background: linear-gradient(145deg, #6246ea, #8170f1);
+      }
+      .scholar-page .scholar-stats div:nth-child(2) .stat-icon {
+        background: linear-gradient(145deg, #f59e0b, #fbbf24);
+      }
+      .scholar-page .scholar-stats div:nth-child(3) .stat-icon {
+        background: linear-gradient(145deg, #19b8c4, #45d1d6);
+      }
+      .scholar-page .scholar-stats div:nth-child(4) .stat-icon {
+        background: linear-gradient(145deg, #19b8c4, #45d1d6);
+      }
+      .scholar-page .soft-section,
+      .scholar-page .tools-section,
+      .scholar-page .articles,
+      .scholar-page .faq-section {
+        background: #eefbfc;
+      }
+      .scholar-page .capability-grid article,
+      .scholar-page .workflow-grid article,
+      .scholar-page .process-grid article,
+      .scholar-page .article-grid article,
+      .scholar-page .journal-grid article,
+      .scholar-page .tools-grid a {
+        background: #fff;
+        border-color: var(--border);
+      }
+      .scholar-page .capability-grid article:nth-child(3n),
+      .scholar-page .tools-grid a:nth-child(3n) {
+        background: linear-gradient(145deg, #f0ecff, #eefbfc);
+      }
+      .scholar-page .capability-grid article:hover {
+        border-color: #19b8c4;
+        box-shadow: 0 18px 38px #19b8c42e;
+      }
+      .scholar-page .capability-grid article > span:first-child {
+        border-color: #9ddfe5;
+        background: #eefbfc;
+        color: #19b8c4;
+      }
+      .scholar-page .work-cards article:nth-child(1) {
+        background: #eefbfc;
+      }
+      .scholar-page .work-cards article:nth-child(2) {
+        background: #e8f8fb;
+      }
+      .scholar-page .work-cards article:nth-child(3) {
+        background: #fff0f3;
+      }
+      .scholar-page .scholar-cta {
+        background: linear-gradient(110deg, #111a32, #6246ea 68%, #19b8c4);
+      }
+      .scholar-page .scholar-button.mint {
+        background: #19b8c4;
+        color: #111a32;
+      }
+      .scholar-page .scholar-button.mint:hover {
+        background: #f59e0b;
+      }
+      .scholar-page .scholar-footer {
+        display: grid;
+        grid-template-columns: 1.2fr 1.5fr 1fr auto;
+        align-items: center;
+        gap: 24px;
+        min-height: 148px;
+        padding: 30px max(28px, calc((100% - 1180px) / 2));
+        background: #111a32;
+        color: #edf2f7;
+      }
+      .scholar-page .scholar-footer .scholar-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        justify-self: start;
+      }
+      .scholar-page .scholar-footer .scholar-brand b {
+        font-size: 15px;
+      }
+      .scholar-page .scholar-footer .scholar-brand small {
+        font-size: 7px;
+      }
+      .scholar-page .scholar-footer p {
+        max-width: 470px;
+        margin: 0;
+        color: rgba(237, 242, 247, 0.82);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .scholar-page .scholar-footer > div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .scholar-page .scholar-footer > div a,
+      .scholar-page .scholar-footer > small {
+        color: rgba(237, 242, 247, 0.86);
+        font-size: 13px;
+      }
+      .scholar-page .scholar-footer > a,
+      .scholar-page .scholar-footer > div a {
+        transition: opacity 0.2s ease;
+      }
+      .scholar-page .scholar-footer > a:hover,
+      .scholar-page .scholar-footer > div a:hover {
+        opacity: 1;
+      }
+      .scholar-page .scholar-footer > small {
+        justify-self: end;
+      }
+      .scholar-page.scholar-page {
+        background: linear-gradient(
+          135deg,
+          #f7f9fc 0%,
+          #fff 52%,
+          #f2f7fb 100%
+        ) !important;
+        color: #111a32;
+      }
+      .scholar-page.scholar-page .scholar-hero h1 span {
+        color: #6246ea !important;
+      }
+      .scholar-page.scholar-page .scholar-hero-buttons .scholar-button.dark {
+        background: linear-gradient(110deg, #111a32, #6246ea) !important;
+      }
+      .scholar-page.scholar-page .scholar-cta .scholar-button.mint {
+        background: #19b8c4 !important;
+      }
+      .scholar-page.scholar-page .scholar-logo {
+        background: linear-gradient(145deg, #6246ea, #19b8c4) !important;
+        box-shadow: 0 5px 14px #19b8c42e;
+      }
+      .scholar-page.scholar-page .scholar-stats {
+        background: linear-gradient(
+          110deg,
+          #111a32,
+          #24304b 56%,
+          #19b8c4
+        ) !important;
+      }
+      .scholar-page.scholar-page .scholar-cta {
+        background: linear-gradient(
+          110deg,
+          #111a32,
+          #6246ea 68%,
+          #19b8c4
+        ) !important;
+      }
+      .scholar-page.scholar-page .scholar-cta .scholar-button.mint {
+        background: #19b8c4 !important;
+        color: #111a32 !important;
+        box-shadow: 0 8px 22px #19b8c42e !important;
+      }
+      .scholar-page.scholar-page .scholar-button.dark {
+        box-shadow: 0 8px 22px #19b8c42e !important;
+      }
+      .scholar-page.scholar-page .scholar-button.outline {
+        color: #111a32 !important;
+      }
+      .scholar-page.scholar-page .capability-grid article:before {
+        background: radial-gradient(
+          circle at var(--spot-x, 50%) var(--spot-y, 50%),
+          #19b8c4 0,
+          transparent 30%
+        );
+      }
+      .scholar-page.scholar-page .capability-grid article:after {
+        background-image: radial-gradient(
+          circle,
+          #19b8c4 1px,
+          transparent 1.5px
+        );
+      }
+      .scholar-page.scholar-page #services .capability-grid article {
+        background: #fff !important;
+        border-color: #e2e8f0 !important;
+        color: #111a32;
+      }
+      .scholar-page.scholar-page
+        #services
+        .capability-grid
+        article:nth-child(3n) {
+        background: linear-gradient(145deg, #f0ecff, #eefbfc) !important;
+      }
+      .scholar-page.scholar-page
+        #services
+        .capability-grid
+        article:nth-child(6) {
+        background: linear-gradient(145deg, #eefbfc, #dff4f7) !important;
+        border-color: #9ddfe5 !important;
+      }
+      .scholar-page.scholar-page
+        #services
+        .capability-grid
+        article
+        > span:first-child {
+        background: #eefbfc !important;
+        border-color: #9ddfe5 !important;
+        color: #19b8c4 !important;
+      }
+      .scholar-page.scholar-page #services .capability-grid article b {
+        color: #111a32 !important;
+      }
+      .scholar-page.scholar-page #services .capability-grid article p {
+        color: #64748b !important;
+      }
+      .scholar-page.scholar-page #services .capability-grid article a {
+        color: #6246ea !important;
+      }
+      .scholar-page.scholar-page #services .capability-grid article:hover {
+        border-color: #19b8c4 !important;
+        box-shadow: 0 18px 38px #19b8c42e !important;
+      }
+      .scholar-page.scholar-page #services .capability-grid article:before {
+        background: radial-gradient(
+          circle at var(--spot-x, 50%) var(--spot-y, 50%),
+          #19b8c4 0,
+          transparent 30%
+        ) !important;
+      }
+      .scholar-page.scholar-page #services .capability-grid article:after {
+        background-image: radial-gradient(
+          circle,
+          #19b8c4 1px,
+          transparent 1.5px
+        ) !important;
+      }
+      .scholar-page.scholar-page .workflow-grid article,
+      .scholar-page.scholar-page .process-grid article,
+      .scholar-page.scholar-page .journal-grid article,
+      .scholar-page.scholar-page .article-grid article,
+      .scholar-page.scholar-page .tools-grid a {
+        background: #fff !important;
+        border-color: #e2e8f0 !important;
+        color: #111a32;
+      }
+      .scholar-page.scholar-page .workflow-grid article b,
+      .scholar-page.scholar-page .process-grid article b,
+      .scholar-page.scholar-page .tools-grid a > span,
+      .scholar-page.scholar-page .journal-grid article > span,
+      .scholar-page.scholar-page .article-grid article > span {
+        color: #6246ea !important;
+      }
+      .scholar-page.scholar-page .workflow-grid article strong,
+      .scholar-page.scholar-page .process-grid article h3,
+      .scholar-page.scholar-page .journal-grid article h3,
+      .scholar-page.scholar-page .article-grid article h3,
+      .scholar-page.scholar-page .tools-grid a b {
+        color: #111a32 !important;
+      }
+      .scholar-page.scholar-page .workflow-grid article p,
+      .scholar-page.scholar-page .process-grid article p,
+      .scholar-page.scholar-page .journal-grid article p,
+      .scholar-page.scholar-page .article-grid article small,
+      .scholar-page.scholar-page .tools-grid a small {
+        color: #64748b !important;
+      }
+      .scholar-page.scholar-page .workflow-grid article,
+      .scholar-page.scholar-page .process-grid article {
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+      .scholar-page.scholar-page .workflow-grid article:nth-child(4n + 1),
+      .scholar-page.scholar-page .process-grid article:nth-child(4n + 1) {
+        background: #f0ecff !important;
+      }
+      .scholar-page.scholar-page .workflow-grid article:nth-child(4n + 2),
+      .scholar-page.scholar-page .process-grid article:nth-child(4n + 2) {
+        background: #fff0f3 !important;
+      }
+      .scholar-page.scholar-page .workflow-grid article:nth-child(4n + 3),
+      .scholar-page.scholar-page .process-grid article:nth-child(4n + 3) {
+        background: #e8f8fb !important;
+      }
+      .scholar-page.scholar-page .workflow-grid article:nth-child(4n),
+      .scholar-page.scholar-page .process-grid article:nth-child(4n) {
+        background: #fff7df !important;
+      }
+      .scholar-page.scholar-page .workflow-grid article:hover,
+      .scholar-page.scholar-page .workflow-grid article:focus-within,
+      .scholar-page.scholar-page .process-grid article:hover,
+      .scholar-page.scholar-page .process-grid article:focus-within {
+        border-color: #6246ea !important;
+        box-shadow: 0 18px 35px #6246ea26;
+        transform: translateY(-8px) scale(1.02);
+      }
+      .scholar-page.scholar-page .tools-grid a {
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+      .scholar-page.scholar-page .tools-grid a:nth-child(4n + 1) {
+        background: #f0ecff !important;
+      }
+      .scholar-page.scholar-page .tools-grid a:nth-child(4n + 2) {
+        background: #fff0f3 !important;
+      }
+      .scholar-page.scholar-page .tools-grid a:nth-child(4n + 3) {
+        background: #e8f8fb !important;
+      }
+      .scholar-page.scholar-page .tools-grid a:nth-child(4n) {
+        background: #fff7df !important;
+      }
+      .scholar-page.scholar-page .tools-grid a:hover,
+      .scholar-page.scholar-page .tools-grid a:focus-visible {
+        border-color: #6246ea !important;
+        box-shadow: 0 18px 35px #6246ea26;
+        transform: translateY(-8px) scale(1.02);
+      }
+      .scholar-page.scholar-page .article-grid article {
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+      .scholar-page.scholar-page .article-grid article:nth-child(1) {
+        background: #f0ecff !important;
+      }
+      .scholar-page.scholar-page .article-grid article:nth-child(2) {
+        background: #fff0f3 !important;
+      }
+      .scholar-page.scholar-page .article-grid article:nth-child(3) {
+        background: #e8f8fb !important;
+      }
+      .scholar-page.scholar-page .article-grid article:hover,
+      .scholar-page.scholar-page .article-grid article:focus-within {
+        border-color: #6246ea !important;
+        box-shadow: 0 18px 35px #6246ea26;
+        transform: translateY(-8px) scale(1.02);
+      }
+      .scholar-page.scholar-page #journals .scholar-button.dark {
+        background: linear-gradient(110deg, #111a32, #6246ea) !important;
+        color: #fff !important;
+        box-shadow: 0 8px 22px #6246ea2e !important;
+      }
+      .scholar-page.scholar-page #journals .scholar-button.dark:hover {
+        background: linear-gradient(110deg, #6246ea, #19b8c4) !important;
+      }
+      .scholar-page.scholar-page .why-section {
+        background: #f2f7fb !important;
+        color: #111a32;
+      }
+      .scholar-page.scholar-page .why-grid article {
+        background: #fff !important;
+        border-color: #e2e8f0 !important;
+        color: #111a32;
+      }
+      .scholar-page.scholar-page .why-grid article b {
+        color: #6246ea !important;
+      }
+      .scholar-page.scholar-page .why-grid article h3 {
+        color: #111a32 !important;
+      }
+      .scholar-page.scholar-page .why-grid article p {
+        color: #64748b !important;
+      }
+      .scholar-page.scholar-page .why-grid article {
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+      .scholar-page.scholar-page .why-grid article:nth-child(1) {
+        background: #f0ecff !important;
+      }
+      .scholar-page.scholar-page .why-grid article:nth-child(2) {
+        background: #fff0f3 !important;
+      }
+      .scholar-page.scholar-page .why-grid article:nth-child(3) {
+        background: #e8f8fb !important;
+      }
+      .scholar-page.scholar-page .why-grid article:nth-child(4) {
+        background: #fff7df !important;
+      }
+      .scholar-page.scholar-page .why-grid article:hover,
+      .scholar-page.scholar-page .why-grid article:focus-within {
+        border-color: #6246ea !important;
+        box-shadow: 0 18px 35px #6246ea26;
+        transform: translateY(-8px) scale(1.02);
+      }
+      .scholar-page.scholar-page
+        .selected-work
+        .work-cards
+        article:nth-child(1) {
+        background: #f0ecff !important;
+      }
+      .scholar-page.scholar-page
+        .selected-work
+        .work-cards
+        article:nth-child(2) {
+        background: #eefbfc !important;
+      }
+      .scholar-page.scholar-page
+        .selected-work
+        .work-cards
+        article:nth-child(3) {
+        background: #fff0f3 !important;
+      }
+      .scholar-page.scholar-page .work-cards article span,
+      .scholar-page.scholar-page .work-cards article a {
+        color: #6246ea !important;
+      }
+      .scholar-page.scholar-page .work-cards article h3 {
+        color: #111a32 !important;
+      }
+      .scholar-page.scholar-page .faq-grid details {
+        border-color: #e2e8f0 !important;
+        color: #111a32;
+      }
+      .scholar-page.scholar-page .faq-grid details p {
+        color: #64748b !important;
+      }
+      .scholar-page.scholar-page .faq-grid summary span {
+        color: #6246ea !important;
+      }
+      .scholar-page.scholar-page .open-status {
+        border-color: #cfc7f8 !important;
+        background: #f4f1ff !important;
+        color: #6246ea !important;
+      }
+      .scholar-page.scholar-page .open-status i {
+        background: #6246ea !important;
+        box-shadow: 0 0 0 0 #6246ea55 !important;
+      }
+      .scholar-page.scholar-page #services .scholar-heading h2 i {
+        color: #6246ea !important;
+        text-decoration-color: #6246ea !important;
+      }
+      .scholar-page.scholar-page
+        #services
+        .capability-grid
+        article:nth-child(3) {
+        background: #f0ecff !important;
+        border-color: #ddd6fe !important;
+      }
+      .scholar-page.scholar-page
+        #services
+        .capability-grid
+        article:nth-child(3):before {
+        background: radial-gradient(
+          circle at var(--spot-x, 50%) var(--spot-y, 50%),
+          #6246ea 0,
+          transparent 30%
+        ) !important;
+      }
+      .scholar-page.scholar-page
+        #services
+        .capability-grid
+        article:nth-child(3):after {
+        background-image: radial-gradient(
+          circle,
+          #6246ea 1px,
+          transparent 1.5px
+        ) !important;
+      }
+      .scholar-page.scholar-page .scholar-header {
+        background: #ffffffe8;
+        border-color: var(--border);
+      }
+      .scholar-page.scholar-page .scholar-brand b,
+      .scholar-page.scholar-page .scholar-nav .active,
+      .scholar-page.scholar-page .scholar-nav a:hover {
+        color: var(--ink);
+      }
+      .scholar-page.scholar-page .scholar-brand small,
+      .scholar-page.scholar-page .scholar-kicker,
+      .scholar-page.scholar-page .scholar-heading h2 i {
+        color: var(--primary);
+      }
+      .scholar-page.scholar-page .scholar-hero h1,
+      .scholar-page.scholar-page .scholar-heading h2,
+      .scholar-page.scholar-page .scholar-cta h2 {
+        color: var(--ink);
+      }
+      .scholar-page.scholar-page .scholar-hero h1 span {
+        color: var(--primary) !important;
+      }
+      .scholar-page.scholar-page .scholar-button.dark {
+        background: var(--grad-hero) !important;
+      }
+      .scholar-page.scholar-page .scholar-button.dark:hover {
+        background: var(--primary-hover) !important;
+      }
+      .scholar-page.scholar-page .scholar-stats {
+        background: var(--grad-blue) !important;
+      }
+      .scholar-page.scholar-page .scholar-cta {
+        background: var(--grad-purple) !important;
+      }
+      .scholar-page.scholar-page .scholar-footer {
+        background: var(--ink);
+      }
+      :root[data-theme="dark"] {
+        --ink: #f2f3f8;
+        --body: #a9aec0;
+        --muted: #6e7488;
+        --bg: #0b0c1a;
+        --surface: #14162a;
+        --surface-2: #1c1f38;
+        --border: #262a44;
+        --primary: #8b72ff;
+        --primary-hover: #a08cff;
+        --primary-soft: #1e1b3a;
+        --grad-hero: linear-gradient(
+          120deg,
+          #8b72ff 0%,
+          #c64fbe 55%,
+          #6d8bff 100%
+        );
+        --grad-purple: linear-gradient(135deg, #6d4aff 0%, #c64fbe 100%);
+        --tint-lavender: #16182e;
+      }
+      .scholar-page.scholar-page.dark-mode {
+        --forest: var(--ink);
+        --deep: var(--surface-2);
+        --teal: var(--primary);
+        --mint: var(--primary);
+        --pale: var(--primary-soft);
+        --muted: var(--body);
+        background: var(--bg) !important;
+        color: var(--ink) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-header {
+        background: #0b0c1ae8 !important;
+        border-color: var(--border) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-logo {
+        background: var(--grad-purple) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-hero:before {
+        background: var(--primary-soft) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-hero:after {
+        background: var(--surface-2) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-hero h1,
+      .scholar-page.scholar-page.dark-mode .scholar-heading h2,
+      .scholar-page.scholar-page.dark-mode .scholar-cta h2,
+      .scholar-page.scholar-page.dark-mode .scholar-brand b,
+      .scholar-page.scholar-page.dark-mode .scholar-nav a {
+        color: var(--ink) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-hero-copy > p,
+      .scholar-page.scholar-page.dark-mode .scholar-heading p,
+      .scholar-page.scholar-page.dark-mode .capability-grid article p,
+      .scholar-page.scholar-page.dark-mode .workflow-grid article p,
+      .scholar-page.scholar-page.dark-mode .process-grid article p,
+      .scholar-page.scholar-page.dark-mode .why-grid article p,
+      .scholar-page.scholar-page.dark-mode .journal-grid article p,
+      .scholar-page.scholar-page.dark-mode .article-grid article small,
+      .scholar-page.scholar-page.dark-mode .tools-grid a small,
+      .scholar-page.scholar-page.dark-mode .faq-grid details p {
+        color: var(--body) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-section,
+      .scholar-page.scholar-page.dark-mode .soft-section,
+      .scholar-page.scholar-page.dark-mode .tools-section,
+      .scholar-page.scholar-page.dark-mode .articles,
+      .scholar-page.scholar-page.dark-mode .faq-section,
+      .scholar-page.scholar-page.dark-mode .why-section {
+        background: var(--bg) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .capability-grid article,
+      .scholar-page.scholar-page.dark-mode .workflow-grid article,
+      .scholar-page.scholar-page.dark-mode .process-grid article,
+      .scholar-page.scholar-page.dark-mode .article-grid article,
+      .scholar-page.scholar-page.dark-mode .journal-grid article,
+      .scholar-page.scholar-page.dark-mode .tools-grid a,
+      .scholar-page.scholar-page.dark-mode .why-grid article {
+        background: var(--surface) !important;
+        border-color: var(--border) !important;
+        color: var(--ink) !important;
+      }
+      .scholar-page.scholar-page.dark-mode
+        .capability-grid
+        article:nth-child(3n),
+      .scholar-page.scholar-page.dark-mode .tools-grid a:nth-child(3n),
+      .scholar-page.scholar-page.dark-mode
+        .selected-work
+        .work-cards
+        article:nth-child(1) {
+        background: var(--primary-soft) !important;
+      }
+      .scholar-page.scholar-page.dark-mode
+        .selected-work
+        .work-cards
+        article:nth-child(2),
+      .scholar-page.scholar-page.dark-mode
+        .selected-work
+        .work-cards
+        article:nth-child(3) {
+        background: var(--surface-2) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-hero h1 span,
+      .scholar-page.scholar-page.dark-mode .scholar-kicker,
+      .scholar-page.scholar-page.dark-mode .scholar-heading h2 i,
+      .scholar-page.scholar-page.dark-mode .work-cards article span,
+      .scholar-page.scholar-page.dark-mode .work-cards article a,
+      .scholar-page.scholar-page.dark-mode .why-grid article b,
+      .scholar-page.scholar-page.dark-mode .faq-grid summary span {
+        color: var(--primary) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-button.dark {
+        background: var(--grad-hero) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-button.outline {
+        background: var(--surface) !important;
+        border-color: var(--border) !important;
+        color: var(--ink) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .open-status {
+        background: var(--primary-soft) !important;
+        border-color: var(--border) !important;
+        color: var(--primary) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-stats {
+        background: var(--grad-hero) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-cta {
+        background: var(--grad-purple) !important;
+      }
+      .scholar-page.scholar-page.dark-mode .scholar-footer {
+        background: var(--surface) !important;
+        color: var(--body) !important;
+      }
+    </style>
+    <style>
+      .scholar-page .capability-grid article:hover::before {
+        opacity: 1 !important;
+      }
+      .scholar-page .capability-grid article.bento-active::before {
+        opacity: 1 !important;
+      }
+      .scholar-page.dark-mode .capability-grid article:hover::before {
+        opacity: 1 !important;
+      }
+      .scholar-page.dark-mode .capability-grid article.bento-active::before {
+        opacity: 1 !important;
+      }
+      @media (max-width: 760px) {
+        .scholar-page .scholar-footer {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          padding-top: 24px;
+          padding-bottom: 26px;
+        }
+        .scholar-page .scholar-footer > small {
+          justify-self: start;
+        }
+        .scholar-page.scholar-page #services .capability-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 9px;
+        }
+        .scholar-page.scholar-page #services .capability-grid article {
+          min-height: 238px;
+          padding: 16px;
+        }
+        .scholar-page.scholar-page #services .capability-grid article b {
+          font-size: 15px;
+          margin-top: 24px;
+        }
+        .scholar-page.scholar-page #services .capability-grid article p {
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+  <body class="scholar-page">
+    <header class="scholar-header">
+      <a class="scholar-brand" href="index.html"
+        ><span class="scholar-logo">▤</span
+        ><span
+          ><b>Scholar's Workbench</b
+          ><small>Research &amp; Innovation</small></span
+        ></a
+      >
+      <nav class="scholar-nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a
+        ><a href="services.html">Services</a><a href="blog.html">Journals</a
+        ><a href="tools.html">Tools</a><a href="pricing.html">Pricing</a
+        ><a href="blog.html">Blog</a><a href="about.html">About us</a>
+      </nav>
+      <div class="scholar-actions">
+        <span class="open-status"><i></i> Call for papers</span
+        ><button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          title="Switch to dark mode"
+        >
+          ☾
+        </button>
+      </div>
+      <button class="scholar-menu" aria-label="Open menu">☰</button>
+    </header>
+    <main>
+      <section class="scholar-hero" id="hero">
+        <div class="scholar-hero-copy">
+          <span class="scholar-kicker"
+            >✦ ACADEMIC · PROJECTS · PUBLISHING · PATENTS</span
+          >
+          <h1>
+            Your Complete <span>Academic &amp; Innovation</span> Support
+            Platform
+          </h1>
+          <p>
+            From academic work and presentations to data, projects, publishing
+            and patents, get practical support for the work you're building.
+          </p>
+          <div class="scholar-hero-buttons">
+            <a class="scholar-button dark" href="#request"
+              >Start a request <span>→</span></a
+            ><a class="scholar-button outline" href="#services"
+              >Explore services</a
+            >
+          </div>
+          <div class="scholar-trust">
+            <span>SC</span><span>PhD</span><span>IP</span>
+            <p>
+              Trusted by research scholars, laboratory directors and patent
+              inventors globally.
+            </p>
+          </div>
+        </div>
+        <div class="workbench-preview">
+          <div class="preview-window">
+            <div class="preview-top">
+              <span class="traffic"><i></i><i></i><i></i></span
+              ><code>Manuscript_v4_Final.docx</code><b>Peer ready</b>
+            </div>
+            <div class="preview-lines"><i></i><i></i><i></i></div>
+            <div class="preview-chart">
+              <strong>⌁ Regression Concordance <em>R² = 0.984</em></strong>
+              <div><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="preview-check">
+              ⌘ <span>Prior-Art Clearance Check</span><b>✓ 0 Conflicts</b>
+            </div>
+          </div>
+          <div class="preview-badge top">
+            <span>✓</span
+            ><small>PUBLICATION STATUS<strong>Ready for review</strong></small>
+          </div>
+          <div class="preview-badge bottom">
+            <span>✦</span
+            ><small
+              >Novelty Disclosure v2<strong
+                >9 claims formatted &amp; mapped</strong
+              ></small
+            >
+          </div>
+        </div>
+      </section>
+      <section class="scholar-stats">
+        <div>
+          <span class="stat-icon">▤</span><strong><em>50</em>+</strong
+          ><span>Projects completed</span
+          ><small>From initial idea to acceptance</small>
+        </div>
+        <div>
+          <span class="stat-icon">♧</span><strong><em>30</em>+</strong
+          ><span>Students supported</span
+          ><small>Guidance for every stage</small>
+        </div>
+        <div>
+          <span class="stat-icon">◷</span><strong><em>24–48</em>h</strong
+          ><span>Avg. turnaround</span
+          ><small>Clear timelines, no surprises</small>
+        </div>
+        <div>
+          <span class="stat-icon">✓</span><strong><em>99</em>%</strong
+          ><span>Satisfaction rate</span
+          ><small>Built on clarity and trust</small>
+        </div>
+      </section>
+      <section class="scholar-section" id="services">
+        <div class="scholar-heading">
+          <span class="scholar-kicker">01 / CAPABILITIES</span>
+          <h2>Everything You Need to Move<br /><i>Works Forward</i></h2>
+          <p>
+            One trusted partner for every stage of your academic and innovation
+            journey.
+          </p>
+        </div>
+        <div class="capability-grid">
+          <article>
+            <span>01</span><b>Academic Writing &amp; Research</b>
+            <p>
+              Structure, clarity and depth for your most important academic
+              work.
+            </p>
+            <a href="services.html">Explore service →</a>
+          </article>
+          <article>
+            <span>02</span><b>Presentations &amp; Visuals</b>
+            <p>
+              Turn complex findings into stories people can understand and
+              remember.
+            </p>
+            <a href="services.html">Explore service →</a>
+          </article>
+          <article>
+            <span>03</span><b>Data &amp; Analytics</b>
+            <p>
+              From clean datasets to meaningful analysis and publication-ready
+              charts.
+            </p>
+            <a href="services.html">Explore service →</a>
+          </article>
+          <article>
+            <span>04</span><b>Projects &amp; Prototypes</b>
+            <p>
+              Technical thinking and patient guidance for ideas that need to
+              become real.
+            </p>
+            <a href="services.html">Explore service →</a>
+          </article>
+          <article>
+            <span>05</span><b>Publishing Support</b>
+            <p>
+              Prepare your manuscript, select the right journal and respond with
+              confidence.
+            </p>
+            <a href="services.html">Explore service →</a>
+          </article>
+          <article>
+            <span>06</span><b>Patents &amp; Innovation</b>
+            <p>
+              Shape the novelty, claims and documentation behind your next
+              invention.
+            </p>
+            <a href="services.html">Explore service →</a>
+          </article>
+          <article>
+            <span>07</span><b>Career &amp; Applications</b>
+            <p>
+              Make your CV, statement or proposal sound unmistakably like you.
+            </p>
+            <a href="services.html">Explore service →</a>
+          </article>
+          <article>
+            <span>08</span><b>Consultation &amp; Mentorship</b>
+            <p>
+              A clear second opinion when the next step feels harder than it
+              should.
+            </p>
+            <a href="contact.html">Talk to an expert →</a>
+          </article>
+        </div>
+      </section>
+      <section class="scholar-section soft-section">
+        <div class="scholar-heading">
+          <span class="scholar-kicker">02 / HOW WE HELP</span>
+          <h2>From Starting Point to Finished<br /><i>Work</i></h2>
+          <p>A practical workflow that keeps momentum alive.</p>
+        </div>
+        <div class="workflow-grid">
+          <article>
+            <b>01</b><strong>Define the brief</strong>
+            <p>We listen to the question, constraints and outcome you need.</p>
+          </article>
+          <article>
+            <b>02</b><strong>Build the plan</strong>
+            <p>You get a clear scope, timeline and the right specialist.</p>
+          </article>
+          <article>
+            <b>03</b><strong>Shape the work</strong>
+            <p>We research, write, design or prototype in focused steps.</p>
+          </article>
+          <article>
+            <b>04</b><strong>Make it ready</strong>
+            <p>Final checks leave you ready to submit with confidence.</p>
+          </article>
+        </div>
+      </section>
+      <section class="scholar-section selected-work">
+        <div class="scholar-heading split">
+          <div>
+            <span class="scholar-kicker">03 / SELECTED WORK</span>
+            <h2>Work That <i>Moves</i> Things Forward</h2>
+          </div>
+          <p>
+            Thoughtful support for ambitious questions, from first sketch to
+            final submission.
+          </p>
+        </div>
+        <div class="work-cards">
+          <article>
+            <span>RESEARCH STRATEGY</span>
+            <h3>From scattered notes to a clear, compelling story.</h3>
+            <a href="services.html">View case study →</a>
+          </article>
+          <article>
+            <span>DATA VISUALIZATION</span>
+            <h3>Numbers that answer the question behind the question.</h3>
+            <a href="services.html">View case study →</a>
+          </article>
+          <article>
+            <span>INNOVATION SUPPORT</span>
+            <h3>A patent idea shaped into a blueprint for action.</h3>
+            <a href="services.html">View case study →</a>
+          </article>
+        </div>
+      </section>
+      <section class="scholar-section" id="journals">
+        <div class="scholar-heading">
+          <span class="scholar-kicker">05 / JOURNALS &amp; CONFERENCES</span>
+          <h2>Navigate the <i>Deadline</i></h2>
+          <p>
+            Find your route through publishing with a little more certainty.
+          </p>
+        </div>
+        <div class="journal-grid">
+          <article>
+            <span>JOURNAL FINDER</span>
+            <h3>Find the right journal for your manuscript.</h3>
+            <p>
+              Scope, audience, indexing and requirements in one clear review.
+            </p>
+            <a class="scholar-button dark" href="contact.html"
+              >Find a journal →</a
+            >
+          </article>
+          <article>
+            <span>CALLS FOR PAPERS</span>
+            <h3>Discover opportunities worth submitting to.</h3>
+            <p>Curated calls, conferences and special issues for your area.</p>
+            <a class="scholar-button dark" href="contact.html"
+              >Browse calls →</a
+            >
+          </article>
+        </div>
+      </section>
+      <section class="scholar-section tools-section" id="tools">
+        <div class="scholar-heading">
+          <span class="scholar-kicker">06 / USEFUL TOOLS</span>
+          <h2>Small Tools. <i>Real Momentum.</i></h2>
+        </div>
+        <div class="tools-grid">
+          <a href="tools.html"
+            ><span>⌘</span><b>Reference builder</b
+            ><small>Cleaner citations, faster.</small></a
+          ><a href="tools.html"
+            ><span>▤</span><b>Abstract checker</b
+            ><small>Make the point land.</small></a
+          ><a href="tools.html"
+            ><span>✦</span><b>Research planner</b
+            ><small>Turn ideas into steps.</small></a
+          ><a href="tools.html"
+            ><span>◌</span><b>Thesis checklist</b
+            ><small>Nothing left behind.</small></a
+          ><a href="tools.html"
+            ><span>↗</span><b>CV toolkit</b
+            ><small>Ready for the next room.</small></a
+          ><a href="tools.html"
+            ><span>?</span><b>Quiz maker</b
+            ><small>Practice with purpose.</small></a
+          >
+        </div>
+      </section>
+      <section class="scholar-section why-section" id="about">
+        <div class="scholar-heading">
+          <span class="scholar-kicker">07 / WHY SCHOLAR'S WORKBENCH</span>
+          <h2>Support That Makes<br /><i>the Work Better</i></h2>
+        </div>
+        <div class="why-grid">
+          <article>
+            <b>01</b>
+            <h3>Practical expertise</h3>
+            <p>
+              Specialists who know the standards, tools and pressure behind the
+              work.
+            </p>
+          </article>
+          <article>
+            <b>02</b>
+            <h3>Clarity at every step</h3>
+            <p>
+              No mystery process. You always know what is happening and why.
+            </p>
+          </article>
+          <article>
+            <b>03</b>
+            <h3>Your work, your voice</h3>
+            <p>
+              We strengthen your thinking without sanding away what makes it
+              yours.
+            </p>
+          </article>
+          <article>
+            <b>04</b>
+            <h3>Confidential by design</h3>
+            <p>
+              Your ideas, files and conversations stay private from brief to
+              delivery.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="scholar-section articles">
+        <div class="scholar-heading split">
+          <div>
+            <span class="scholar-kicker">08 / FROM THE WORKBENCH</span>
+            <h2>Latest from Scholar's<br /><i>Workbench</i></h2>
+          </div>
+          <a href="blog.html">Read all articles →</a>
+        </div>
+        <div class="article-grid">
+          <article>
+            <span>RESEARCH</span>
+            <h3>How to turn a broad topic into a researchable question.</h3>
+            <small>6 min read · 12 Aug 2026</small>
+          </article>
+          <article>
+            <span>WRITING</span>
+            <h3>The quiet architecture of a strong literature review.</h3>
+            <small>8 min read · 04 Aug 2026</small>
+          </article>
+          <article>
+            <span>INNOVATION</span>
+            <h3>What makes an idea ready for a patent conversation?</h3>
+            <small>5 min read · 28 Jul 2026</small>
+          </article>
+        </div>
+      </section>
+      <section class="scholar-section faq-section">
+        <div class="scholar-heading">
+          <span class="scholar-kicker">09 / FAQ</span>
+          <h2>Frequently Asked <i>Questions</i></h2>
+        </div>
+        <div class="faq-grid">
+          <details open>
+            <summary>Who is Scholar's Workbench for? <span>+</span></summary>
+            <p>
+              Researchers, students, laboratory teams, founders and inventors
+              who want practical support.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Can you work with an existing draft? <span>+</span>
+            </summary>
+            <p>
+              Yes. We can start from a blank page, rough outline, dataset or
+              nearly finished manuscript.
+            </p>
+          </details>
+          <details>
+            <summary>How quickly can I get support? <span>+</span></summary>
+            <p>We confirm a realistic timeline after reviewing your brief.</p>
+          </details>
+          <details>
+            <summary>
+              Will the final work still sound like me? <span>+</span>
+            </summary>
+            <p>
+              We clarify and strengthen your voice rather than replacing it.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="scholar-cta" id="request">
+        <div>
+          <span class="scholar-kicker">READY WHEN YOU ARE</span>
+          <h2>Have Something You're<br /><i>Working On?</i></h2>
+          <p>
+            Bring the question, the draft or the half-formed idea. Let's give it
+            a clear next step.
+          </p>
+        </div>
+        <div>
+          <a class="scholar-button mint" href="contact.html"
+            >Start a request →</a
+          ><a
+            class="scholar-button ghost"
+            href="mailto:hello@scholarsworkbench.org"
+            >Email us</a
+          >
+        </div>
+      </section>
+      +
+    </main>
+    +
+    <footer class="scholar-footer">
+      <a class="scholar-brand" href="#hero"
+        ><span class="scholar-logo">▤</span
+        ><span
+          ><b>Scholar's Workbench</b
+          ><small>Research &amp; Innovation</small></span
+        ></a
+      >
+      <p>Practical support for ambitious academic and innovation work.</p>
+      <div>
+        <a href="services.html">Services</a><a href="tools.html">Tools</a
+        ><a href="blog.html">Journal</a><a href="contact.html">Contact</a>
+      </div>
+      <small>© 2026 Scholar's Workbench</small>
+    </footer>
+    +
+    <script src="script.js"></script>
+    +
+  </body>
+  +
+</html>

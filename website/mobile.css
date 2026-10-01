@@ -1,0 +1,421 @@
+.workflow-grid p,
+.why-grid p {
+  font-size: 12px;
+}
+.why-grid h3 {
+  margin-top: 22px;
+  font-size: 15px;
+}
+.split {
+  display: block;
+}
+.split > p {
+  margin-top: 18px;
+}
+.work-cards,
+.journal-grid {
+  grid-template-columns: 1fr;
+}
+.work-cards h3,
+.journal-grid h3 {
+  margin-top: 35px;
+}
+.tools-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.tools-grid a {
+  min-height: 125px;
+  padding: 14px;
+}
+.tools-grid a b {
+  font-size: 15px;
+}
+@media (max-width: 760px) {
+  .page-hero {
+    padding-top: 65px;
+    padding-bottom: 72px;
+  }
+  .page-hero h1 {
+    font-size: 51px;
+    letter-spacing: -2.5px;
+  }
+  .page-hero > p:last-child {
+    font-size: 14px;
+  }
+  .service-detail-grid,
+  .pricing-grid,
+  .story-section,
+  .contact-hero {
+    display: block;
+    padding-top: 55px;
+    padding-bottom: 70px;
+  }
+  .detail-card {
+    min-height: 420px;
+    margin-bottom: 10px;
+    padding: 22px;
+  }
+  .detail-card h2 {
+    font-size: 34px;
+    margin-top: 45px;
+  }
+  .detail-card > p {
+    font-size: 12px;
+  }
+  .price-card {
+    min-height: 0;
+    margin-bottom: 10px;
+    padding: 23px;
+  }
+  .price-card.featured {
+    transform: none;
+  }
+  .price-card h2 {
+    margin-top: 38px;
+  }
+  .pricing-note {
+    padding-bottom: 75px;
+  }
+  .promise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .promise-grid div {
+    border: 0;
+    padding: 0;
+  }
+  .story-image {
+    height: 325px;
+    margin-bottom: 52px;
+  }
+  .story-copy h2,
+  .values h2 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+  .values {
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
+  .value-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 18px;
+  }
+  .value-grid article {
+    margin: 0;
+    padding-bottom: 22px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .value-grid h3 {
+    margin-top: 30px;
+  }
+  .tool-directory {
+    padding-top: 60px;
+    padding-bottom: 75px;
+  }
+  .directory-top {
+    display: block;
+  }
+  .directory-top p:last-child {
+    margin-top: 18px;
+  }
+  .tool-directory-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .directory-card {
+    min-height: 260px;
+    padding: 17px;
+  }
+  .directory-card strong {
+    font-size: 19px;
+    margin-top: 40px;
+  }
+  .directory-card p {
+    font-size: 10px;
+  }
+  .tools-callout {
+    display: block;
+    padding: 65px 21px;
+  }
+  .tools-callout h2,
+  .subscribe h2 {
+    font-size: 43px;
+  }
+  .tools-callout .button {
+    margin-top: 35px;
+  }
+  .article-list {
+    padding-top: 55px;
+    padding-bottom: 75px;
+  }
+  .article-feature {
+    display: block;
+    padding-bottom: 55px;
+  }
+  .article-feature img {
+    height: 250px;
+    margin-bottom: 35px;
+  }
+  .article-feature h2 {
+    font-size: 30px;
+  }
+  .article-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .subscribe {
+    display: block;
+    padding: 62px 21px;
+  }
+  .subscribe form {
+    width: auto;
+    margin-top: 38px;
+  }
+  .subscribe form div {
+    display: block;
+    border: 0;
+  }
+  .subscribe input {
+    width: 100%;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 14px;
+  }
+  .contact-hero {
+    padding-top: 65px;
+  }
+  .contact-hero h1 {
+    font-size: 51px;
+    letter-spacing: -2.5px;
+  }
+  .contact-details {
+    margin-top: 35px;
+  }
+  .contact-form {
+    margin-top: 55px;
+    padding: 24px 20px;
+  }
+  .contact-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 0;
+    padding-bottom: 75px;
+  }
+  .contact-steps > div {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+  .contact-steps span {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .scholar-header {
+    height: 68px;
+    padding: 0 20px;
+  }
+  .scholar-brand b {
+    font-size: 15px;
+  }
+  .scholar-brand small {
+    font-size: 7px;
+  }
+  .scholar-logo {
+    width: 30px;
+    height: 30px;
+  }
+  .scholar-nav,
+  .scholar-actions {
+    display: none;
+  }
+  .scholar-menu {
+    display: block;
+  }
+  .scholar-nav.nav-open {
+    display: flex;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 15px;
+    padding: 18px 20px;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 12px 25px #063d3514;
+  }
+  .scholar-hero {
+    display: block;
+    padding: 65px 20px 90px;
+  }
+  .scholar-hero h1 {
+    font-size: 45px;
+    line-height: 1.08;
+  }
+  .scholar-hero-copy > p {
+    font-size: 14px;
+  }
+  .scholar-hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .scholar-trust p {
+    font-size: 9px;
+  }
+  .workbench-preview {
+    margin-top: 55px;
+    padding: 25px 0 30px;
+  }
+  .preview-window {
+    padding: 15px;
+  }
+  .preview-badge.top {
+    right: -5px;
+    transform: scale(0.8);
+    transform-origin: right top;
+  }
+  .preview-badge.bottom {
+    left: -5px;
+    transform: scale(0.8);
+    transform-origin: left bottom;
+  }
+  .scholar-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 34px 20px;
+  }
+  .scholar-stats strong {
+    font-size: 25px;
+  }
+  .scholar-stats small {
+    font-size: 8px;
+  }
+  .scholar-section,
+  .soft-section,
+  .tools-section,
+  .articles,
+  .faq-section {
+    padding: 50px 20px;
+  }
+  .scholar-heading h2,
+  .scholar-cta h2 {
+    font-size: 38px;
+  }
+  .capability-grid,
+  .workflow-grid,
+  .process-grid,
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .capability-grid article {
+    min-height: 240px;
+    padding: 15px;
+  }
+  .capability-grid b {
+    margin-top: 25px;
+    font-size: 12px;
+  }
+  .capability-grid p {
+    font-size: 10px;
+  }
+  .workflow-grid article,
+  .process-grid article,
+  .why-grid article {
+    min-height: 160px;
+    padding: 15px;
+  }
+  .workflow-grid p,
+  .process-grid p,
+  .why-grid p {
+    font-size: 10px;
+  }
+  .process-grid h3,
+  .why-grid h3 {
+    margin-top: 22px;
+    font-size: 13px;
+  }
+  .split {
+    display: block;
+  }
+  .split > p {
+    margin-top: 18px;
+  }
+  .work-cards,
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+  .work-cards h3,
+  .journal-grid h3 {
+    margin-top: 35px;
+  }
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .tools-grid a {
+    min-height: 125px;
+    padding: 14px;
+  }
+  .scholar-cta {
+    display: block;
+    padding: 65px 20px;
+  }
+  .scholar-cta .scholar-button {
+    margin-top: 18px;
+  }
+  .scholar-cta .ghost {
+    margin-left: 5px;
+  }
+  .scholar-footer {
+    display: block;
+    padding: 30px 20px;
+  }
+  .scholar-footer p {
+    margin: 20px 0;
+  }
+  .scholar-footer > div {
+    margin: 22px 0;
+  }
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+  .article-grid article {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 760px) {
+  .scholar-page.scholar-page .scholar-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 22px 14px;
+    border-radius: 14px;
+  }
+  .scholar-page.scholar-page .scholar-stats div {
+    grid-template-columns: 34px 1fr;
+    column-gap: 8px;
+    padding: 0 5px;
+  }
+  .scholar-page.scholar-page .scholar-stats div + div {
+    border-left: 0;
+  }
+  .scholar-page.scholar-page .scholar-stats .stat-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    font-size: 16px;
+  }
+  .scholar-page.scholar-page .scholar-stats strong {
+    font-size: 20px;
+  }
+  .scholar-page.scholar-page .scholar-stats span:not(.stat-icon) {
+    font-size: 9px;
+  }
+  .scholar-page.scholar-page .scholar-stats small {
+    font-size: 7px;
+  }
+}
